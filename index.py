@@ -1,9 +1,6 @@
 import requests
 import json
 
-#session = requests.Session()
-
-#response = session.get('https://www.psal.org/profiles/school-profile.aspx#22527')
 def cookies():
     r = requests.get('https://psal.org/profiles/school-profile.aspx#22527')
     cookies_dic = r.cookies.get_dict()
@@ -110,7 +107,3 @@ def roster(year, sportId):
     }
     d = requests.get(url,headers=headers)
     return d.text
-
-month = 4
-year = 2022
-print("https://www.psal.org/SportDisplay.svc/GetStudentGrade?schoolId=%2722527%27%20&nmonth="+month+"&nyear="+year+"&orderBY='DATE-desc'")
